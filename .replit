@@ -22,13 +22,13 @@ args = "PHP Web Server"
 name = "PHP Web Server"
 author = "agent"
 
+[workflows.workflow.metadata]
+outputType = "webview"
+
 [[workflows.workflow.tasks]]
 task = "shell.exec"
-args = "php -S 0.0.0.0:8000 -t ."
-waitForPort = 8000
-
-[workflows.workflow.metadata]
-outputType = "console"
+args = "php -S 0.0.0.0:5000 -t ."
+waitForPort = 5000
 
 [[ports]]
 localPort = 8000
@@ -36,4 +36,8 @@ externalPort = 8000
 
 [[ports]]
 localPort = 46405
+externalPort = 80
+
+[[ports]]
+localPort = 5000
 externalPort = 80
